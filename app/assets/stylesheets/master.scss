@@ -6,3 +6,10 @@ $secondary-font: 'Roboto', sans-serif;
 html, body {
   font-family: $primary-font;
 }
+$main-color: #337ab7;  
+.navbar-default .navbar-brand {
+  font-weight: 100;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: $main-color;
+}
