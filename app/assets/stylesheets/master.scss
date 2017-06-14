@@ -1,0 +1,8 @@
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+.navbar-default {
+  font-family: $secondary-font;
+}
+html, body {
+  font-family: $primary-font;
+}
