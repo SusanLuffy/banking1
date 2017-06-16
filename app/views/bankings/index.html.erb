@@ -1,4 +1,3 @@
-
 <div class="container">
 <table class="table">
 <h1>Balance:</h1>
@@ -16,8 +15,8 @@
   <td><%= bank.Date %></td>
   <td><%= bank.Title %></td>
   <td><%= bank.Amount %></td>
-  <td><a class="btn btn-warning" href="#">Edit</a></td>
-  <td><a class="btn btn-danger" href="#">Delete</a></td>
+  <td><%= link_to 'Delete', banking_path(bank), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %></td>
+  <td><%= link_to 'Revise', edit_banking_path(bank), class: 'btn btn-sm btn-success' %></td>
 </tr>
 <% end %>
 </table>
