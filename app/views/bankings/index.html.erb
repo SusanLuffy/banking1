@@ -1,0 +1,30 @@
+
+<div class="container">
+<table class="table">
+<h1>Balance:</h1>
+<h1>Debt:</h1>
+<h1>Total:</h1>
+<tr>
+  <th>Date</th>
+  <th>Title</th>
+  <th>Amount</th>
+  <th></th>
+  <th></th>
+</tr>
+<% @bankings.each do |bank| %>
+<tr>
+  <td><%= bank.Date %></td>
+  <td><%= bank.Title %></td>
+  <td><%= bank.Amount %></td>
+  <td><a class="btn btn-warning" href="#">Edit</a></td>
+  <td><a class="btn btn-danger" href="#">Delete</a></td>
+</tr>
+<% end %>
+</table>
+<%= simple_form_for Banking.new do |b| %>
+  <%= b.input :Date %>
+  <%= b.input :Title %>
+  <%= b.input :Amount %>
+  <%= b.submit 'Submit', class:'btn btn-primary' %>
+<% end %>
+</div>
