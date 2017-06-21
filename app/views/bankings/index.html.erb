@@ -1,8 +1,10 @@
 <div class="container">
 <table class="table">
-<h1>Balance:</h1>
-<h1>Debt:</h1>
-<h1>Total:</h1>
+
+<h1>Balance: <%= @balance %></h1>
+<h1>Debt: <%= @debt %></h1>
+<h1>Total: <%= Banking.sum(:amount) %></h1>
+
 <tr>
   <th>Date</th>
   <th>Title</th>
@@ -12,18 +14,13 @@
 </tr>
 <% @bankings.each do |bank| %>
 <tr>
-  <td><%= bank.Date %></td>
-  <td><%= bank.Title %></td>
-  <td><%= bank.Amount %></td>
+  <td><%= bank.date %></td>
+  <td><%= bank.title %></td>
+  <td><%= bank.amount %></td>
+  <td><%= link_to 'Edit', edit_banking_path(bank), class: 'btn btn-sm btn-warning' %></td>
   <td><%= link_to 'Delete', banking_path(bank), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %></td>
-  <td><%= link_to 'Revise', edit_banking_path(bank), class: 'btn btn-sm btn-success' %></td>
+  
 </tr>
 <% end %>
 </table>
-<%= simple_form_for Banking.new do |b| %>
-  <%= b.input :Date %>
-  <%= b.input :Title %>
-  <%= b.input :Amount %>
-  <%= b.submit 'Submit', class:'btn btn-primary' %>
-<% end %>
 </div>

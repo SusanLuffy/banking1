@@ -1,5 +1,7 @@
 class BankingsController < ApplicationController
     def index
+        @balance = Banking.balance
+        @debt = Banking.debt
         @bankings = Banking.all
     end
     
@@ -29,6 +31,6 @@ class BankingsController < ApplicationController
     
     private 
     def banking_params
-       params.require(:banking).permit(:Date, :Title, :Amount) 
+       params.require(:banking).permit(:date, :title, :amount) 
     end
 end

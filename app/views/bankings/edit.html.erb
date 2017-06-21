@@ -1,6 +1,8 @@
+<div class="container">
 <%= simple_form_for @banking, method: :patch do |b| %>
-    <%= b.input :Date %>
-    <%= b.input :Title %>
-    <%= b.input :Amount %>
+    <%= b.input :date %>
+    <%= b.input :title %>
+    <%= b.input :amount %>
     <%= b.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
+</div>

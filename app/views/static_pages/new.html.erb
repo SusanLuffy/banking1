@@ -1,0 +1,8 @@
+<div class="container">
+<%= simple_form_for Banking.new do |b| %>
+  <%= b.input :date %>
+  <%= b.input :title %>
+  <%= b.input :amount %>
+  <%= b.submit 'Create Record', class:'btn btn-success' %>
+<% end %>
+</div>
